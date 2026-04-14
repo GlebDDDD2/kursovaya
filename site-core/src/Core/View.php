@@ -12,8 +12,8 @@ final class View
         if (!is_file($templateFile)) {
             throw new \RuntimeException('Шаблон не найден: ' . $template);
         }
-        require dirname(__DIR__, 2) . '/templates/layout/header.php';
-        require $templateFile;
-        require dirname(__DIR__, 2) . '/templates/layout/footer.php';
+        require_once dirname(__DIR__, 2) . '/templates/layout/header.php';
+        require_once $templateFile;
+        require_once dirname(__DIR__, 2) . '/templates/layout/footer.php';
     }
 }
