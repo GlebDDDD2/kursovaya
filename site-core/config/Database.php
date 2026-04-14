@@ -22,7 +22,7 @@ final class Database
                 throw new PDOException('Файл config.php не найден. Скопируйте config.example.php в config.php и заполните данные БД.');
             }
 
-            $config = require $configFile;
+            $config = require_once $configFile;
             $dsn = sprintf(
                 'mysql:host=%s;dbname=%s;charset=%s',
                 $config['host'],
