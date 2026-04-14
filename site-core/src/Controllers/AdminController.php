@@ -189,14 +189,14 @@ final class AdminController
                 fclose($fp);
                 $created = 0;
                 for ($i = 1; $i <= $count; $i++) {
-                    $price = round((float) $template['price'] * (1 + mt_rand(-15, 15) / 100), 2);
-                    $area = round((float) $template['area'] * (1 + mt_rand(-10, 10) / 100), 2);
+                    $price = round((float)$template['price'] * (1 + random_int(-15, 15) / 100), 2);
+                    $area = round((float)$template['area'] * (1 + random_int(-10, 10) / 100), 2);
                     $newId = $propertyModel->create([
-                        'title' => $template['title'] . ' #' . mt_rand(1000, 9999),
+                        'title' => $template['title'] . ' #' . random_int(1000, 9999),
                         'property_type' => $template['property_type'],
                         'district_id' => (int) $template['district_id'],
                         'realtor_id' => (int) $template['realtor_id'],
-                        'address' => $template['address'] . ', корпус ' . mt_rand(1, 20),
+                        'address' => $template['address'] . ', корпус ' . random_int(1, 20),
                         'price' => $price,
                         'floor' => $template['floor'],
                         'total_floors' => $template['total_floors'],
